@@ -1,0 +1,19 @@
+# edit a file then source it into the current terminal session
+function edsrc {
+    (emacs $1) && (. $1) && echo "updated $1"
+}
+
+# edit aliases and update
+function alup {
+    edsrc ~/.bash_aliases
+}
+
+# edit environment and update
+function envup {
+    edsrc ~/.bash_env
+}
+
+# edit this functions file and update
+function fnup {
+    edsrc ~/.bash_fn
+}
