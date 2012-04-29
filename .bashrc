@@ -101,3 +101,13 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# set your environment variables
+if [ -f ~/.bash_env ]; then
+    . ~/.bash_env
+fi
+
+# set your custom functions
+if [ -f ~/.bash_fn ]; then
+    . ~/.bash_fn
+fi
