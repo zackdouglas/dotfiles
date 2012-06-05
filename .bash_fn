@@ -1,6 +1,7 @@
 # edit a file then source it into the current terminal session
 function edsrc {
-    (emacs $1) && (. $1) && echo "updated $1"
+    local editor=${EDITOR:-emacs}
+    $editor $1 && . $1 && echo "updated $1"
 }
 
 # edit aliases and update
