@@ -1,1 +1,1 @@
-export EDITOR='emacs -env'
+export EDITOR='emacs -nw'
