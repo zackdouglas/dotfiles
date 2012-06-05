@@ -11,3 +11,6 @@ alias semacs='sudo $EDITOR'
 # never ignore dotfiles
 alias ls='ls -a --color=auto'
 alias ll='ls -lh --color=auto'
+
+# use hub as git if available
+#[ -n `which hub` ] && eval "$(hub alias -s)"
