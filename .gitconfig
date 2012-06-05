@@ -6,6 +6,7 @@
 [core]
     editor = emacs
 [alias]
+    a = add
     br = branch
     cfg = !$EDITOR ~/.gitconfig
     ci = commit
