@@ -15,5 +15,6 @@
     di = diff
     u = !git remote update origin && echo && git st
     u = !git u && git pull
+    pom = push origin master
     st = status -s -uno --porcelain
     sts = status
