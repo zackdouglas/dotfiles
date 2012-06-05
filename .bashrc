@@ -112,12 +112,12 @@ if [ -f ~/.bash_fn ]; then
     . ~/.bash_fn
 fi
 
-# set your environment variables
+# set your environment color shortcuts
 if [ -f ~/.bash_colors ]; then
     . ~/.bash_colors
 fi
 
-# set your custom functions
+# set your custom bookmarks to directories
 if [ -f ~/.dir_bookmarks ]; then
     . ~/.dir_bookmarks
 fi
