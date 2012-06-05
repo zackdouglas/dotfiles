@@ -1,16 +1,18 @@
 [user]
-	name = Zack
-	email = perfectstar04@gmail.com
+    name = Zack
+    email = perfectstar04@gmail.com
 [color]
-	ui = auto
+    ui = auto
 [core]
-	editor = emacs
+    editor = emacs
 [alias]
-	aliases = !git config --get-regexp='alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
-	ci = commit
-	cim = commit -m
-	co = checkout
-	up = !git remote update origin && echo && git update
-	upup = !git up && git pull
-	st = status
-	sts = status -s -uno
+    br = branch
+    cfg = !$EDITOR ~/.gitconfig
+    ci = commit
+    cim = commit -m
+    co = checkout
+    di = diff
+    u = !git remote update origin && echo && git st
+    u = !git u && git pull
+    st = status -s -uno --porcelain
+    sts = status
