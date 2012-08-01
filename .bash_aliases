@@ -12,5 +12,5 @@ alias semacs='sudo $EDITOR'
 alias ls='ls -a --color=auto'
 alias ll='ls -lh --color=auto'
 
-# use hub as git if available
-#[ -n `which hub` ] && eval "$(hub alias -s)"
+# system has git
+[ -n `which git` -a -z `which g` ] && alias g=git
