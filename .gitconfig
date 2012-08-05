@@ -18,4 +18,4 @@
     uu = !git u && git pull
     pom = push origin master
     st = status -s -uno --porcelain
-    sts = status
+    stt = status
