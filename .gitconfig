@@ -13,8 +13,9 @@
     cim = commit -m
     co = checkout
     di = diff
+    lg = log --oneline --graph
     u = !git remote update origin && echo && git st
-    u = !git u && git pull
+    uu = !git u && git pull
     pom = push origin master
     st = status -s -uno --porcelain
     sts = status

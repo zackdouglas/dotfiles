@@ -13,4 +13,4 @@ alias ls='ls -a --color=auto'
 alias ll='ls -lh --color=auto'
 
 # system has git
-[ -n `which git` -a -z `which g` ] && alias g=git
+[ -n `which git` ] && [ -z `which g` ] && alias g=git
