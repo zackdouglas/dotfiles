@@ -1,1 +1,13 @@
-export EDITOR='emacs -nw'
+# use emacs where available
+if [ `which emacs` ]; then
+  export EDITOR='emacs -nw'
+elif [ `which vim` ]; then
+  export EDITOR='vim'
+elif [ `which nano` ]; then
+  export EDITOR='nano'
+else
+  echo "No suitable editor found." 1>&2
+fi
+
+# do not escape color escape sequences in pager
+export LESS=-R
