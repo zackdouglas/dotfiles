@@ -15,8 +15,7 @@
     di = diff
     get-extras = !cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install
     lg = !git --no-pager log --abbrev-commit --decorate --oneline --graph --all $*
-    u = !git remote update origin && echo && git st
-    uu = !git u && git pull
-    pom = push origin master
+    lpr = !git ls-remote $1 -h *$2* -
+    u = !git remote -f update --prune $1 && echo && git st
     st = status -s -uno --porcelain
     stt = status
