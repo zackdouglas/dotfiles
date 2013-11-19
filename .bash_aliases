@@ -12,5 +12,8 @@ alias semacs='sudo $EDITOR'
 alias ls='ls -a --color=auto'
 alias ll='ls -lh --color=auto'
 
+# screen
+[ -n "`which screen`" ] && (alias screens='screen -ls' && alias screenr='screen -r')
+
 # system has git
 [ -n `which git` ] && [ -z `which g` ] && alias g=git
