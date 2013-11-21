@@ -1,7 +1,3 @@
-# shortcut to common grep commands
-#alias fgp='grep -FRIni'
-alias rgp='grep -RIni'
-
 # emacs should open in CLI
 alias emacs='emacs -nw'
 
@@ -12,8 +8,11 @@ alias semacs='sudo $EDITOR'
 alias ls='ls -a --color=auto'
 alias ll='ls -lh --color=auto'
 
-# screen
-[ -n "`which screen`" ] && (alias screens='screen -ls' && alias screenr='screen -r')
-
-# system has git
-[ -n `which git` ] && [ -z `which g` ] && alias g=git
+if test ! `test -f /etc/debian_version`
+then
+  test ! `rpm -qa|grep screen >/dev/null` && alias screens='screen -ls' && alias screenr='screen -r'
+  test ! `rpm -qa|grep git >/dev/null` && alias g=git
+else
+  test -n "`which screen`" && alias screens='screen -ls' && alias screenr='screen -r'
+  test -n "`which git`" && alias g=git
+fi
