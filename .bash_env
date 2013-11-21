@@ -1,13 +1,12 @@
 # use emacs where available
-if [ `which emacs` ]; then
-  export EDITOR='emacs -nw'
-elif [ `which vim` ]; then
-  export EDITOR='vim'
-elif [ `which nano` ]; then
-  export EDITOR='nano'
+if test ! `test -f /etc/debian_version`
+then
+  test ! `rpm -qa|grep emacs >/dev/null` && export EDITOR='emacs -nw'
 else
-  echo "No suitable editor found." 1>&2
+  test -n "`which emacs`" && export EDITOR='emacs -nw'
 fi
+
+test -n "$EDITOR" || echo '.bash_env could not set EDITOR' >&2
 
 # do not escape color escape sequences in pager
 export LESS=-R
