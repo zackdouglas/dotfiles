@@ -1,9 +1,9 @@
 # use emacs where available
-if test ! `test -f /etc/debian_version`
+if test -f /etc/debian_version
 then
-  test ! `rpm -qa|grep emacs >/dev/null` && export EDITOR='emacs -nw'
-else
   test -n "`which emacs`" && export EDITOR='emacs -nw'
+else
+  test ! `rpm -qa|grep emacs >/dev/null` && export EDITOR='emacs -nw'
 fi
 
 test -n "$EDITOR" || echo '.bash_env could not set EDITOR' >&2
