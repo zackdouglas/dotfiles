@@ -30,7 +30,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm256-color|xterm16-color|xterm) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -68,13 +68,15 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    if [ ! "Darwin" = "`uname`" ]; then
+      alias ls='ls --color=auto'
+      #alias dir='dir --color=auto'
+      #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=yes'
-    alias fgrep='fgrep --color=yes'
-    alias egrep='egrep --color=yes'
+      alias grep='grep --color=yes'
+      alias fgrep='fgrep --color=yes'
+      alias egrep='egrep --color=yes'
+    fi
 fi
 
 # some more ls aliases
@@ -95,13 +97,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
 # set your environment variables
 if [ -f ~/.bash_env ]; then
     . ~/.bash_env
@@ -120,4 +115,11 @@ fi
 # set your custom bookmarks to directories
 if [ -f ~/.dir_bookmarks ]; then
     . ~/.dir_bookmarks
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
 fi
