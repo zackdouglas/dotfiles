@@ -7,4 +7,8 @@ cp -v ~/.* .bak/.
 
 cp -vr ./.* ~/.
 
+source ~/.bashrc
+
+cd ~
+
 echo 'Dotfiles installation complete!'
