@@ -8,7 +8,7 @@
 [alias]
     a = add
     br = branch
-    cfg = !$EDITOR ~/.gitconfig
+    cfg = !${EDITOR:-emacs -nw} ~/.gitconfig
     ci = commit
     cim = commit -m
     co = checkout
