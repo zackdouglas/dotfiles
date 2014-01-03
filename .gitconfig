@@ -17,6 +17,6 @@
     lg = "!git --no-pager log --abbrev-commit --decorate --oneline --graph --all $*"
     lpr = "!git ls-remote $1 -h *$2* -"
     u = "!git remote update --prune $1 && echo && git st"
-    up = "!f () { git u $1 && g pull $1 $2; }; f"
+    up = "!f () { git u $1 && git pull $1 $2; }; f"
     st = status -s -uno --porcelain
     stt = status
