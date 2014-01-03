@@ -8,14 +8,15 @@
 [alias]
     a = add
     br = branch
-    cfg = !${EDITOR:-emacs -nw} ~/.gitconfig
+    cfg = "!${EDITOR:-emacs -nw} ~/.gitconfig"
     ci = commit
     cim = commit -m
     co = checkout
     di = diff
-    get-extras = !cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install
-    lg = !git --no-pager log --abbrev-commit --decorate --oneline --graph --all $*
-    lpr = !git ls-remote $1 -h *$2* -
-    u = !git remote -f update --prune $1 && echo && git st
+    get-extras = "!cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install
+    lg = !git --no-pager log --abbrev-commit --decorate --oneline --graph --all $*"
+    lpr = "!git ls-remote $1 -h *$2* -"
+    u = "!git remote -f update --prune $1 && echo && git st"
+    up = "!f () { git u $1 && g pull $1 $2; }; f"
     st = status -s -uno --porcelain
     stt = status
