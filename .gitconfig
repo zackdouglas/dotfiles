@@ -20,3 +20,5 @@
     up = "!f () { git u $1 && git pull $1 $2; }; f"
     st = status -s -uno --porcelain
     stt = status
+[push]
+    default = simple
