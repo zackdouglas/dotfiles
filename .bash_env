@@ -1,9 +1,9 @@
 # use emacs where available
-if [ `which emacs` ]; then
+if which emacs >/dev/null 2>&1; then
   export EDITOR='emacs -nw'
-elif [ `which vim` ]; then
+elif which vim>/dev/null 2>&1; then
   export EDITOR='vim'
-elif [ `which nano` ]; then
+elif which nano>/dev/null 2>&1; then
   export EDITOR='nano'
 else
   echo "No suitable editor found." 1>&2

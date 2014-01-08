@@ -16,4 +16,4 @@ alias ll='ls -lh --color=auto'
 [ -n "`which screen`" ] && (alias screens='screen -ls' && alias screenr='screen -r')
 
 # system has git
-[ -n `which git` ] && [ -z `which g` ] && alias g=git
+test `which git >/dev/null 2>&1` && test ! `which g /dev/null 2>&1` && alias g=git
