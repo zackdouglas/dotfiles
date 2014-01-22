@@ -12,8 +12,7 @@ alias semacs='sudo $EDITOR'
 alias ls='ls -a --color=auto'
 alias ll='ls -lh --color=auto'
 
-# screen
-[ -n "`which screen`" ] && (alias screens='screen -ls' && alias screenr='screen -r')
-
-# system has git
-test `which git >/dev/null 2>&1` && test ! `which g /dev/null 2>&1` && alias g=git
+# stuff I use all the time
+alias screenr='screen -r'
+alias screens='screen -ls'
+alias g=git
