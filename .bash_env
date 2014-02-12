@@ -1,7 +1,10 @@
 # use emacs where available
-if test -f /etc/debian_version
-then
-  test -n "`which emacs`" && export EDITOR='emacs -nw'
+if which emacs >/dev/null 2>&1; then
+  export EDITOR='emacs -nw'
+elif which vim>/dev/null 2>&1; then
+  export EDITOR='vim'
+elif which nano>/dev/null 2>&1; then
+  export EDITOR='nano'
 else
   test ! `rpm -qa|grep emacs >/dev/null` && export EDITOR='emacs -nw'
 fi
