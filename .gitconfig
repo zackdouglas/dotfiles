@@ -14,7 +14,10 @@
     co = checkout
     di = diff
     get-extras = "!cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install"
-    lg = "!git --no-pager log --abbrev-commit --decorate --oneline --graph --all $*"
+    lg = "!git log --abbrev --decorate --oneline --graph $*"
+    lg-np = "!git --no-pager log --abbrev --decorate --oneline --graph $*"
+    lga = "!git --no-pager log --abbrev --decorate --oneline --graph --all $*"
+    lg-npa = "!git --no-pager log --abbrev --decorate --oneline --graph --all $*"
     lpr = "!git ls-remote $1 -h *$2* -"
     u = "!f () { git remote update --prune $@ && echo && git st; }; f"
     up = "!f () { git u $1 && git pull $1 $2; }; f"
