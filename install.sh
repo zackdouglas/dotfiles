@@ -2,9 +2,11 @@
 
 echo 'Installing Dotfiles'
 
-mkdir .bak
-cp -v ~/.* .bak/.
+mkdir -p .dotfiles.bak
+cp -v ~/.* .dotfiles.bak/.
 
 cp -vr ./.* ~/.
 
 echo 'Dotfiles installation complete!'
+cd
+source .bashrc
