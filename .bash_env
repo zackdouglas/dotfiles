@@ -6,10 +6,8 @@ elif which vim>/dev/null 2>&1; then
 elif which nano>/dev/null 2>&1; then
   export EDITOR='nano'
 else
-  test ! `rpm -qa|grep emacs >/dev/null` && export EDITOR='emacs -nw'
+  echo "No suitable editor found." 1>&2
 fi
-
-test -n "$EDITOR" || echo '.bash_env could not set EDITOR' >&2
 
 # do not escape color escape sequences in pager
 export LESS=-R
