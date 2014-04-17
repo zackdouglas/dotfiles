@@ -14,6 +14,7 @@
     co = checkout
     di = diff
     get-extras = "!cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install"
+    h = help
     lg = "!git log --abbrev --decorate --oneline --graph $*"
     lgn = "!git --no-pager log --abbrev --decorate --oneline --graph $*"
     lga = "!git --no-pager log --abbrev --decorate --oneline --graph --all $*"
