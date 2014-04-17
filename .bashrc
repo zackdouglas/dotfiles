@@ -75,15 +75,13 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    if [ ! "Darwin" = "`uname`" ]; then
-      alias ls='ls --color=auto'
-      #alias dir='dir --color=auto'
-      #alias vdir='vdir --color=auto'
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
 
-      alias grep='grep --color=yes'
-      alias fgrep='fgrep --color=yes'
-      alias egrep='egrep --color=yes'
-    fi
+    alias grep='grep --color=yes'
+    alias fgrep='fgrep --color=yes'
+    alias egrep='egrep --color=yes'
 fi
 
 # some more ls aliases
@@ -97,6 +95,13 @@ alias l='ls -CF'
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
 fi
 
 # set your environment variables
@@ -117,11 +122,4 @@ fi
 # set your custom bookmarks to directories
 if [ -f ~/.dir_bookmarks ]; then
     . ~/.dir_bookmarks
-fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
 fi
