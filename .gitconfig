@@ -8,21 +8,26 @@
 [alias]
     a = add
     br = branch
+    brd = "!f () {git has $1 | grep -q master && git br -d $1 && exit 0 || echo $1 not merged to master && exit 1; }; f"
+    brdf = "!f () { git brd $1 || git br -D $1; }; f"
     cfg = "!${EDITOR:-emacs -nw} ~/.gitconfig"
     ci = commit
     cim = commit -m
     co = checkout
+    contains = "!git show $(git fsck --no-reflogs --unreachable | grep commit | cut -d' ' -f 3)"
     di = diff
     get-extras = "!cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install"
     h = help
+    has = branch --contains
     lg = "!git log --abbrev --decorate --oneline --graph $*"
     lgn = "!git --no-pager log --abbrev --decorate --oneline --graph $*"
     lga = "!git --no-pager log --abbrev --decorate --oneline --graph --all $*"
     lgna = "!git --no-pager log --abbrev --decorate --oneline --graph --all $*"
     lpr = "!git ls-remote $1 -h *$2* -"
-    u = "!f () { git remote update --prune $@ && echo && git st; }; f"
-    up = "!f () { git u $1 && git pull $1 $2; }; f"
+    m = merge
     st = status -s -uno --porcelain
     stt = status
+    u = "!f () { git remote update --prune $@ && echo && git st; }; f"
+    up = "!f () { git u $1 && git pull $1 $2; }; f"
 [pull]
     default = simple
