@@ -16,3 +16,11 @@ alias ll='ls -lh --color=auto'
 alias screenr='screen -r'
 alias screens='screen -ls'
 alias g=git
+
+# easier directory navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias bd='cd -'
