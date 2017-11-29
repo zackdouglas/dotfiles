@@ -24,3 +24,12 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias bd='cd -'
+
+# JavaScript / TypeScript
+alias y='yarn'
+alias yb='yarn build'
+alias yi='yarn integration'
+alias yinb='yarn integration-no-build'
+alias ys='yarn start'
+alias yt='yarn test'
+alias n='node'
